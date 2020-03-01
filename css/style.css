@@ -58,19 +58,22 @@ color: #333333;
 }
 .content{
 	max-width: 1300px;
-	width: 96%;
+	width: 100%;
 	margin: 0 auto;
 }
 .container{
 	display: flex;
+    flex-wrap: wrap;
+
 }
 .c-50{
 	width: 50%;
 	flex: 0 0 50%;
+
 }
 .c-33{
-	width: 33%;
-	flex: 0 0 33%;
+	width: 33.3333%;
+	flex: 0 0 33.3333%;
 }
 .c-70{
 	width: 70%;
@@ -172,23 +175,32 @@ background: #D92929;
 	background: #F6F6F7;
 	padding: 71px 0px;
 }
+.cards-block .container{
+	margin-right:-10px;
+	margin-left:-10px;
+}
 .cb-content{
 	height: 100%;
 	position: relative;
 	z-index: 10;
-	max-width: 70%;
 	padding: 20px 0px 25px 20px;
+	min-height: 236px;
+	background: #FFFFFF;
+	border-radius: 5px;
+	overflow: hidden;
 }
 .cb-card{
-	background: #FFFFFF;
-border-radius: 5px;
-overflow: hidden;
-min-height: 236px;
-position: relative;
+
+padding: 0 10px;
 }
 .cb-c-img{
 position: absolute;
 bottom: 0;
 right: 0;
 width: 40%;
+}
+.cb-descr,.cb-t{
+	z-index: 10;
+	position: relative;
+	max-width: 65%;
 }
