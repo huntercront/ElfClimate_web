@@ -9,7 +9,7 @@ h1{
 	font-family: Inter;
 font-style: normal;
 font-weight: 700;
-font-size: 2.66em;
+font-size: 2.66rem;
 line-height: 1.15em;
 color: #333333;
 }
@@ -49,6 +49,21 @@ color: #333333;
 	line-height: 105%;
 	color: #D92929;
 	margin-bottom: 0px;
+}
+
+@media(max-width:786px){
+	html{
+		font-size: 13px;
+	}
+}
+@media(max-width:425px){
+	h2{
+		font-size: 1.4rem;
+		line-height: 1.2;
+	}
+	.before-title{
+		font-size: 0.8rem;
+	}
 }
 /* grid */
 .s-c{
@@ -221,7 +236,7 @@ background: #D92929;
 .cards-block{
 	margin-top: 72px;
 	background: #F6F6F7;
-	padding: 71px 0px;
+	padding: 72px 0px;
 }
 .cards-block .container{
 	margin-right:-10px;
@@ -236,9 +251,10 @@ background: #D92929;
 	background: #FFFFFF;
 	border-radius: 5px;
 	overflow: hidden;
+
 }
 .cb-card{
-
+	margin-bottom: 20px;
 padding: 0 10px;
 }
 .cb-c-img{
@@ -256,7 +272,58 @@ width: 45%;
 	z-index: 10;
 	position: relative;
 }
+@media(max-width:1174px){
+	.cards-block .c-33{
+		width: 50%;
+    flex: 0 0 50%;
+	}
+	.cb-content{
+		height: 220px;
+	}
+}
+@media(max-width:786px){
+	.cards-block .c-33{
+		width: 50%;
+    flex: 0 0 50%;
+	}
+	.cb-content{
+		min-height: 220px;
+	}
+}
+@media(max-width:648px){
 
+	.cards-block .container{
+		overflow-x: scroll; 
+		flex-wrap: nowrap;
+		margin-left: -3%;
+		margin-right: -3%;
+	}
+	.cards-block .c-33{
+		width: 300px;
+    flex: 0 0 300px;
+	}
+	.cb-content{
+		min-height: auto;
+		height: 200px;
+		padding: 15px 0px 20px 15px;
+	}
+	.cb-card:first-child{
+		margin-left: calc(3% - 10px);
+	}
+	.cb-card:last-child{
+		margin-right: calc(3% - 10px);
+	}
+	.cb-c-img{
+		transform: translate(10%,0);
+	}
+	.cb-descr{
+		max-width: 60%;
+	}
+	.cards-block{
+		padding: 24px 0px;
+	}
+	
+}
 /* card-section */
 .catalog-section{
 	margin-top: 72px;
@@ -302,7 +369,7 @@ transition-property: transform,box-shadow;
 }
 .cs-card-descr{
 	font-size: 0.86rem;
-	color: rgba(0, 0, 0, 0.4);
+	color: rgba(0, 0, 0, 0.7);
 	margin-bottom: 0.5rem;
 	padding: 0 15px;
 }
@@ -321,6 +388,11 @@ font-weight: 600;
 font-size: 0.86rem;
 line-height: 133.5%;
 color: #333333;
+}
+@media(max-width:648px){
+	.cs-card-read{
+		font-size: 1rem;
+	}
 }
 .cs-card-read:hover{
 	background: #D92929;
