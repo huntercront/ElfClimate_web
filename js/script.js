@@ -60,7 +60,27 @@ function getScrollBarWidth () {
 	return 100 - widthWithScroll;
 };
 
+//tabs
+$(".tab-t").on("click",function(e){
+	$('.tab-t').removeClass('tab-t-active')
+	$(this).addClass('tab-t-active');
 
+	var activeWidth = $(this).innerWidth();
+	var itemPos = $(this).position();
+	$(".tab-t-selector").css({
+		"left":itemPos.left + "px", 
+		"width": activeWidth + "px"
+	});
+
+	$('.offer').removeClass('active-tab');
+	$('[data-tab='+$(this).attr('data-select-tab')+']').addClass('active-tab');
+	
+})
+
+$(".tab-t-selector").css({
+	"left":$('.tab-t-active').position().left + "px", 
+	"width": $('.tab-t-active').innerWidth() + "px"
+});
 
 
 
