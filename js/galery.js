@@ -1,5 +1,13 @@
 //galery
-if($('.catalog-section').is('[data-fancybox]')){
+document.addEventListener('DOMContentLoaded', function(){
+function getScrollBarWidth () {
+	var $outer = $('<div>').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+			widthWithScroll = $('<div>').css({width: '100%'}).appendTo($outer).outerWidth();
+	$outer.remove();
+	return 100 - widthWithScroll;
+};
+
+if($('div').is('[data-fancybox]')){
 	$("[data-fancybox]").fancybox({
 			buttons: [
 					"close"
@@ -40,4 +48,4 @@ if($('.catalog-section').is('[data-fancybox]')){
 			},
 	});
 	}	
-	
+});
