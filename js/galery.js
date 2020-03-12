@@ -1,5 +1,5 @@
 //galery
-if($('.catalog-section').hasAttr('[data-fancybox]')){
+if($('.catalog-section').is('[data-fancybox]')){
 	$("[data-fancybox]").fancybox({
 			buttons: [
 					"close"

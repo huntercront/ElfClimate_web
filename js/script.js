@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
     $('[data-anchor=true]').click(function() {
         var elementClick = $(this).attr("href")
-        var destination = ($(elementClick).offset().top - 65);
+        var destination = ($(elementClick).offset().top - 74);
         jQuery("html:not(:animated),body:not(:animated)").animate({
             scrollTop: destination
         }, 500);
@@ -77,12 +77,12 @@ $(".tab-t").on("click",function(e){
 	
 })
 
+if($('div').is(".tab-t-selector")){
 $(".tab-t-selector").css({
 	"left":$('.tab-t-active').position().left + "px", 
 	"width": $('.tab-t-active').innerWidth() + "px"
 });
-
-
+}
 
 if($(window).width() > 992) {
 $(window).scroll(function(){

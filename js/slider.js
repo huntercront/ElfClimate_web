@@ -59,11 +59,51 @@ if($('.main-hero-slider').hasClass('slides')){
 			servSlider.destroy(true);
 		}
 	})
-
 	$('.services-slider-next').click(function() {
 		servSlider.next()
 	})
 
+
+	var blog = new Siema({
+		selector: '.blog-slides',
+		duration: 250,
+		easing: 'ease-out',
+		startIndex: 0,
+		draggable: true,
+		multipleDrag: true,
+		threshold: 90,
+		loop: false,
+		rtl: false,
+		perPage:  {
+			319: 2,
+			506: 3,
+			686: 4,
+			962: 5,
+			1174: 6,
+		},
+		onInit: printSlideIndex,
+		onChange: printSlideIndex,
+		});
+		var blogLength = blog.innerElements.length;
+		function printSlideIndex() {
+			if(this.currentSlide == 0){
+				$('.blog-slider-prev').addClass('hiden')
+			}else	{
+				$('.blog-slider-prev').removeClass('hiden')
+			}
+			if(blogLength < (this.currentSlide + this.perPage + 1)){
+				$('.blog-slider-next').addClass('hiden')
+			}else{
+				$('.blog-slider-next').removeClass('hiden')
+			}
+		}
+		
+	$('.blog-slider-prev').click(function() {
+		blog.prev()
+	})
+	$('.blog-slider-next').click(function() {
+		blog.next()
+	})
 
 	
 })
