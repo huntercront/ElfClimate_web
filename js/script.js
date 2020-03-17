@@ -104,6 +104,31 @@ if ($(this).scrollTop() < 200){
 });
 }
 
+
+//modal
+$(".close-modal, .modal-overley").on("click",function(e){
+	$('[data-modal]').removeClass('visible-modal');
+	$('.modal-overley').removeClass('modal-overley-show');
+	setTimeout(function(){
+		$('body').removeClass('stop-scroll');
+		$('body').css('padding-right',0+'px');
+		$('.site-header').css('padding-right',0+'px')
+	}, 300);
+  
+})
+$('[data-modal-open]').on("click",function(e){
+	event.preventDefault()
+	$('[data-modal]').addClass('visible-modal')
+	$('[data-modal=1] .modal-header-t').text($(this).prev('.cb-c-text').find('.bloc-t').text());
+	$('[data-modal=1] .modal-hero-descr').text($(this).prev('.cb-c-text').find('.descr').text());
+	$('[data-modal=1] .modal-hero-img').attr('src',$(this).next('.cb-c-img').attr('src'));
+	$('.modal-overley').addClass('modal-overley-show');
+	$('body').addClass('stop-scroll');
+	$('body').css('padding-right',getScrollBarWidth ()+'px');
+	$('.site-header').css('padding-right',getScrollBarWidth ()+'px')  
+	//modal-hero-img
+	console.log($(this).prev('.cb-c-text').find('.bloc-t').text())
+})
 //ripple
 $(document).on("mousedown", "[data-ripple]", function(e) {
     
