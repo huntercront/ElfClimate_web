@@ -106,7 +106,7 @@ if ($(this).scrollTop() < 200){
 
 
 //modal
-$(".close-modal, .modal-overley").on("click",function(e){
+function hideModal(){
 	$('[data-modal]').removeClass('visible-modal');
 	$('.modal-overley').removeClass('modal-overley-show');
 	setTimeout(function(){
@@ -114,8 +114,16 @@ $(".close-modal, .modal-overley").on("click",function(e){
 		$('body').css('padding-right',0+'px');
 		$('.site-header').css('padding-right',0+'px')
 	}, 300);
-  
+}
+$(".close-modal, .modal-overley").on("click",function(e){
+	hideModal()
 })
+
+$(document).keydown(function(eventObject){
+	if (eventObject.which == 27)
+	hideModal()
+});
+
 $('[data-modal-open]').on("click",function(e){
 	event.preventDefault()
 	$('[data-modal]').addClass('visible-modal')

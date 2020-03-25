@@ -2283,7 +2283,7 @@ transition-property: transform;
 	background:#F6F6F7;
 	height: 60px; 
 	padding: 5px 30px;
-	padding-right: 10px;
+	padding-right: 20px;
 }
 .modal-content .bloc-t{
 margin: 0;
@@ -2295,18 +2295,35 @@ margin: 0;
 	margin-left: 2rem;
 	border-radius: 3px;
 }
-.modal-hero-w{
-	height: 160px;
+.modal-hero-block{
 	padding-left: 30px;
-	box-shadow: 0 15px 20px 0 rgba(109, 81, 81, 0.15);
+	padding-right: 30px;
+	padding-bottom: 1.5rem;
+	background: #f6f6f7;
+}
+.modal-hero-descr{
+	padding-right: 40%;
+	margin-bottom: 0;
+}
+.modal-hero-w{
+	height: 145px;
+	padding-left: 30px;
+	/* box-shadow: 0 15px 20px 0 rgba(109, 81, 81, 0.15); */
+	border: 1px solid #F0F0F0;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	background: #FFFFFF;
 }
 .modal-hero-w img{
-	height: 100%;
-	width: auto;
+	width: 30%;
+	position: absolute;
+	right: 0;
+	bottom: -5px;
 }
 .modal-body{
 	padding-left: 30px;
-	padding-right: 20px;
+	padding-right: 30px;
 	margin-top: 4rem;
 }
 .effect-1{
@@ -2323,7 +2340,7 @@ margin: 0;
 	left: 0;
 	right: 0;
 	position: fixed;
-	z-index: 70;
+	z-index: 250;
 	bottom: 0;
 	background: #333333;
 	visibility: hidden;
