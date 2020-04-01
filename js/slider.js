@@ -29,7 +29,7 @@ if($('.main-hero-slider').hasClass('slides')){
 		heroSlider.next()
 	})
 	}
-
+	if($('div').is('.services-slider')){
 	var servSlider = new Siema({
 		selector: '.services-slider',
 		duration: 250,
@@ -62,8 +62,10 @@ if($('.main-hero-slider').hasClass('slides')){
 	$('.services-slider-next').click(function() {
 		servSlider.next()
 	})
+	}
 
 
+if($('div').is('.blog-slides')){
 	var blog = new Siema({
 		selector: '.blog-slides',
 		duration: 250,
@@ -104,6 +106,28 @@ if($('.main-hero-slider').hasClass('slides')){
 	$('.blog-slider-next').click(function() {
 		blog.next()
 	})
+}
+
+	var blogRight = new Siema({
+		selector: '.blog-right',
+		duration: 250,
+		easing: 'ease-out',
+		startIndex: 0,
+		draggable: true,
+		multipleDrag: false,
+		threshold: 90,
+		loop: true,
+		rtl: false,
+		perPage: 1,
+		});
+		
+	$('.brs-slider-prev').click(function() {
+	blogRight.prev()
+	})
+	$('.brs-slider-next').click(function() {
+	blogRight.next()
+	})
+
 
 	
 })
