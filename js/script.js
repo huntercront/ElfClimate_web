@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
 
-    $('[data-anchor=true]').click(function() {
+    $('body').on('click','[data-anchor=true]', function() {
         var elementClick = $(this).attr("href")
         var destination = ($(elementClick).offset().top - 74);
         jQuery("html:not(:animated),body:not(:animated)").animate({
@@ -146,6 +146,22 @@ $('.centured-modal').on("click",function(e){
 .click(function(e){ 
 		e.stopPropagation();
 })
+
+
+//post-nav
+$(".sp-links .post-nav").append('<div class"post-nav-head"><h4>Содержание:</h4></div>')
+$(".sp-text-col h2,.sp-text-col h3,.sp-text-col h4").each(function(i) {
+    var current = $(this);
+    current.attr("id", "title" + i);
+    $(".sp-links .post-nav").append("<a id='link" + i + "' href='#title" + i + "' title='" + $(this).text() + "' data-anchor='" + true + "'>" + current.html() + "</a>");
+});
+//like-button
+$('.sp-like-button').on("click",function(e){
+$(this).addClass('sp-like-button-liked');
+$('.sp-l-text').text(Number.parseInt($('.sp-l-text').text())+1);
+})
+
+
 
 //ripple
 $(document).on("mousedown", "[data-ripple]", function(e) {
