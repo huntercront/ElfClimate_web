@@ -126,29 +126,36 @@ $(document).keydown(function(eventObject){
 
 $('[data-modal-open]').on("click",function(e){
 	event.preventDefault()
-	$('[data-modal]').addClass('visible-modal')
+
+	$('[data-modal='+ $(this).attr('data-modal-open') +']').addClass('visible-modal')
+	if($(this).attr('data-modal-open')==1){
 	$('[data-modal=1] .modal-header-t').text($(this).prev('.cb-c-text').find('.bloc-t').text());
 	$('[data-modal=1] .modal-hero-descr').text($(this).prev('.cb-c-text').find('.descr').text());
 	$('[data-modal=1] .modal-hero-img').attr('src',$(this).next('.cb-c-img').attr('src'));
+}
 	$('.modal-overley').addClass('modal-overley-show');
 	$('body').addClass('stop-scroll');
 	$('body').css('padding-right',getScrollBarWidth ()+'px');
-	$('.site-header').css('padding-right',getScrollBarWidth ()+'px')  
-	//modal-hero-img
-	console.log($(this).prev('.cb-c-text').find('.bloc-t').text())
+	$('.site-header').css('padding-right',getScrollBarWidth ()+'px');
 })
+
+// centured-modal-close
+$('.centured-modal').on("click",function(e){
+	hideModal()
+}).children()
+.click(function(e){ 
+		e.stopPropagation();
+})
+
 //ripple
 $(document).on("mousedown", "[data-ripple]", function(e) {
-    
     var $self = $(this);
-    
     if($self.is(".btn-disabled")) {
       return;
     }
     if($self.closest("[data-ripple]")) {
       e.stopPropagation();
     }
-    
     var initPos = $self.css("position"),
         offs = $self.offset(),
         x = e.pageX - offs.left,
@@ -159,7 +166,6 @@ $(document).on("mousedown", "[data-ripple]", function(e) {
     if(!initPos || initPos==="static") {
       $self.css({position:"relative"});
     }
-    
     $('<div/>', {
       class : "rippleWave",
       css : {

@@ -2356,7 +2356,121 @@ margin: 0;
 .modal-overley-show{
 	visibility: visible;
 	opacity: 0.3;
+}
+@media(max-width:520px){
+	.modal-content{
+		max-width: 100%;
+	}
+	.modal-hero-block{
+		padding: 0;
+	}
+}
+@media(max-width:425px){
+	.modal-header{
+		padding: 0px 3%;
+		height: 50px;
+	}
+	.modal-hero-w img{
+		width: 35%;
+	}
+	.modal-hero-w{
+		padding-left: 3%;
+	}
+	.modal-hero-block{
+		padding: 0;
+	}
+	.modal-body{
+		padding: 0 3%;
+	}
+}
 
+/* centured-modal */
+.centured-modal{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+		left: 0;
+		overflow-x: hidden;
+		overflow-y: auto;
+		z-index: 300;
+		visibility: hidden;
+		opacity: 0;
+		transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+		transition-property: visibility,opacity;
+}
+.centured-modal.visible-modal{
+visibility: visible;
+opacity: 1;
+}
+
+.centured-modal-dialog{
+	max-width: 525px;
+	margin: 0 auto;
+	position: relative;
+	min-height: calc(100% - (1.75rem * 2));
+	margin: 1.75rem auto;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	transform: translate(0,-15%);
+	transition: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: transform;
+}
+.centured-modal-content{
+	position: relative;
+    width: 100%;
+    pointer-events: auto;
+		overflow: hidden;
+		border-radius: 3px;
+		background: #ffffff;
+}
+.centured-modal.visible-modal .centured-modal-dialog{
+	transform: translate(0,0%);
+}
+.cont-us-header img{
+	width: 100%; 
+}
+.cont-us-header{
+	background: #E84545;
+	position: relative;
+}
+.cont-us-header-logo{
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	max-width: 100px;
+}
+.centured-m-t{
+	font-size: 1.5rem;
+}
+.centured-m-before{
+	font-size: 1.2rem;
+}
+.centured-m-d {
+	margin-bottom: 2rem;
+}
+.centured-m-body{
+	padding: 2rem;
+}
+.centured-modal-content .modal-header-t{
+margin-bottom: 0;
+}
+
+@media(max-width:520px){
+	.centured-modal-dialog{
+		margin: 0;
+		min-height: 100%;
+	}
+}
+@media(max-width:425px){
+	.centured-m-body{
+		padding: 1rem 3%;
+	}
+	.cont-us-header-logo{
+		right: 3%;
+	}
 }
 
 /* ripple */
@@ -2553,7 +2667,7 @@ padding: 20px;
 	overflow: hidden;
 }
 .blog-list-card:hover .blc-i-image{
-	opacity: 0.7;
+	opacity: 0.65;
 }
 .blc-fv-img{
 	width: 18px;
