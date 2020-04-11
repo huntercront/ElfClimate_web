@@ -2801,20 +2801,38 @@ height: 240px;
 .post-nav{
 	position: sticky;
 	top: 100px;
-	background: #F6F6F7;
+	/* background: #F6F6F7; */
 	padding: 1rem;
+}
+.post-nav-container{
 	display: flex;
 	justify-content: flex-start;
 	align-items: flex-start;
 	flex-direction: column;
+	position: relative;
+	border-left: 3px solid rgb(224, 224, 224);
 }
-.post-nav a{
+.post-nav-selector{
+	position: absolute;
+	width: 3px;
+	background: #D92929;
+	border-radius: 4px;
+	height: auto;
+	left: -3px;
+	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: top,height;
+}
+.post-nav-head{
+	margin-bottom: 1rem;
+}
+.post-nav-container a{
 	color: #333333;
-	margin:5px;
+	padding:5px;
 	transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 transition-property: color;
 }
-.post-nav a:hover{
+
+.post-nav-container a:hover{
 text-decoration: none;
 color: #E84545;
 }
@@ -2906,6 +2924,7 @@ color: #333333;
 .sp-text-col img{
 	margin-top: 1rem;
 	margin-bottom: 1.75rem;
+	width: 100%;
 }
 .sp-type-article{
 	top: 20px;
@@ -2945,7 +2964,10 @@ box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
 	fill: rgba(232, 69, 69,1);
 	stroke: rgba(232, 69, 69,1);
 }
-
+.sp-like-button-liked:hover > svg{
+	fill: rgba(232, 69, 69,1);
+	stroke: rgba(232, 69, 69,1);
+}
 .sp-read-time-img img,.sp-like-img img,.sp-views-img img{
 	margin: 0;
 }
@@ -2974,6 +2996,46 @@ box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
 display: flex;
 justify-content: flex-start;
 }
+@media(max-width:1094px){
+.sp-like-button{
+	left: 10px;
+	bottom: 10px;
+}
+}
 @media(max-width:768px){
+	.sp-links{
+		display: none;
+	}
+	.sp-text-col{
+		max-width: 100%;
+    flex: 0 0 100%;
+    padding-right: 0px;
+	}
+	.sp-like-button{
+		right: 10px;
+		left: auto;
+		bottom: 10px;
+	}
+	.post-nav{
+		background: #F6F6F7;
+		margin-top: 1rem;
+	}
+	.sp-mobile-nav .post-nav-container{
+		border-left: none;
+	}
+	.sp-mobile-nav .post-nav-container a {
+padding-left: 0;
+	}
+
+	.sp-text-col h1{
+	font-size: 1.8rem;
+	}
 	
+	.sp-text-col h2{
+		font-size: 1.6rem;
+	}
+	
+	.sp-text-col h3{
+		font-size: 1.4rem;
+	}
 }
