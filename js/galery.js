@@ -7,7 +7,7 @@ function getScrollBarWidth () {
 	return 100 - widthWithScroll;
 };
 
-if($('div').is('[data-fancybox]')){
+if($('a , div').is('[data-fancybox]')){
 	$("[data-fancybox]").fancybox({
 			buttons: [
 					"close"

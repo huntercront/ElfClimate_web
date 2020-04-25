@@ -19,6 +19,7 @@ if($('.main-hero-slider').hasClass('slides')){
 
 		function currentSlide() {
 			$('.mh-slede-descr').text($('.main-hero-slider').find('.main-hero').eq(this.currentSlide).attr('data-slide-descr'));
+			$('.main-hero').removeClass('hide-on-load')
 	}
 
 
@@ -108,6 +109,8 @@ if($('div').is('.blog-slides')){
 	})
 }
 
+
+if($('div').is('.blog-right')){
 	var blogRight = new Siema({
 		selector: '.blog-right',
 		duration: 250,
@@ -127,6 +130,54 @@ if($('div').is('.blog-slides')){
 	$('.brs-slider-next').click(function() {
 	blogRight.next()
 	})
+}
+
+
+
+	if($('div').is('.sert-slider')){
+		var sert = new Siema({
+			selector: '.sert-slider',
+			duration: 250,
+			easing: 'ease-out',
+			startIndex: 0,
+			draggable: true,
+			multipleDrag: true,
+			threshold: 90,
+			loop: false,
+			rtl: false,
+			perPage:  {
+				319: 2,
+				506: 3,
+				686: 4,
+				962: 5,
+				1174: 6,
+			},
+			onInit: printSlideIndex,
+			onChange: printSlideIndex,
+			});
+			var sertLength = sert.innerElements.length;
+			function printSlideIndex() {
+				if(this.currentSlide == 0){
+					$('.sert-slider-prev').addClass('hiden')
+				}else	{
+					$('.sert-slider-prev').removeClass('hiden')
+				}
+				if(sertLength < (this.currentSlide + this.perPage + 1)){
+					$('.sert-slider-next').addClass('hiden')
+				}else{
+					$('.sert-slider-next').removeClass('hiden')
+				}
+			}
+			
+		$('.sert-slider-prev').click(function() {
+			sert.prev()
+		})
+		$('.sert-slider-next').click(function() {
+			sert.next()
+		})
+	}
+
+
 
 
 	
