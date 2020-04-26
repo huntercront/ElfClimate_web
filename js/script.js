@@ -202,6 +202,81 @@ $('.sp-l-text').text(Number.parseInt($('.sp-l-text').text())+1);
 
 
 
+
+
+
+//quiz
+var curentStage=1;
+$('.cond-quiz-counter-curent').text(curentStage);
+$('.cond-quiz-footer-next').prop('disabled',true)
+
+$('.count-line-counter').css('width',(100 / $('.cond-quiz-body').length) + '%')
+$('.c-check input').on("change",function(e){
+if($('.c-check input:checked').length > 0){
+	$('.cond-quiz-footer-next').prop('disabled',false)
+}
+else{
+	$('.cond-quiz-footer-next').prop('disabled',true)
+}
+	})
+
+	$('.c-q-c-c-item').on("click",function(e){
+		$(this).toggleClass('c-q-c-c-item-selected')
+		if($('.c-q-c-c-item-selected').length > 0){
+			$('.cond-quiz-footer-next').prop('disabled',false)
+		}
+		else{
+			$('.cond-quiz-footer-next').prop('disabled',true)
+		}
+})
+
+
+
+	$('.cond-quiz-footer-next').on("click",function(e){
+if(curentStage==1){
+		$('[data-stage='+curentStage+'] .c-check input:checked').each(function(i) {
+			var values = $('[data-field-id=field--1]').val();
+			values += $(this).parent('.c-check').text();
+			$('[data-field-id=field--1]').val(values.replace(/\s/g, '')+',');
+		});
+	}
+
+	if(curentStage==2){
+$('.c-q-c-c-item-selected').each(function(i) {
+	var values = $('[data-field-id=field--2]').val();
+	values += $(this).find('.c-q-c-c-item-descr').text();
+	$('[data-field-id=field--2]').val(values.replace(/\s/g, '')+',');
+});
+}
+
+if(curentStage==3){
+	$('[data-stage='+curentStage+'] .c-check input:checked').each(function(i) {
+		var values = $('[data-field-id=field--3]').val();
+		values += $(this).parent('.c-check').text();
+		$('[data-field-id=field--3]').val(values.replace(/\s/g, '')+',');
+	});
+}
+
+$('[data-stage='+curentStage+']').removeClass('active-stage')
+$('[data-stage='+curentStage+']').addClass('disable-stage')
+$('[data-stage='+curentStage+']').fadeOut(1);
+
+curentStage = curentStage + 1;
+$('[data-stage='+curentStage+']').fadeIn();
+$('[data-stage='+curentStage+']').removeClass('disable-stagea')
+$('[data-stage='+curentStage+']').addClass('ctive-stage')
+$('.cond-quiz-counter-curent').text(curentStage);
+$('.cond-quiz-footer-next').prop('disabled',true)
+$('.count-line-counter').css('width',(100 / $('.cond-quiz-body').length)*curentStage + '%')
+if(curentStage==4){
+	$(this).parent('.cond-quiz-footer').fadeOut(1);
+}
+
+	})
+
+
+
+
 //ripple
 $(document).on("mousedown", "[data-ripple]", function(e) {
     var $self = $(this);
