@@ -2477,6 +2477,18 @@ margin-bottom: 0;
 	}
 }
 
+/* main-request-modal */
+.main-request .cont-us-header{
+	background: #F6F6F7;
+}
+.main-request .main-request-img{
+width: 60%;
+}
+.main-request .modal-header{
+	border-bottom: 1px solid #eaeaea;
+}
+
+
 /* ripple */
 .ripple{
 	position: absolute;
