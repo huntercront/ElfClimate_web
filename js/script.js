@@ -133,6 +133,11 @@ $('[data-modal-open]').on("click",function(e){
 	$('[data-modal=1] .modal-hero-descr').text($(this).prev('.cb-c-text').find('.descr').text());
 	$('[data-modal=1] .modal-hero-img').attr('src',$(this).next('.cb-c-img').attr('src'));
 }
+if($(this).attr('data-modal-open')==3){
+	$('[data-modal=3] .centured-m-t').text($(this).parentsUntil('.hf-t').find('h1').text());
+	$('[data-modal=3] .centured-m-d').text($(this).parentsUntil('.hf-t').find('.hero-content p:first-child').text());
+	$('[data-modal=3] .main-request-img').attr('src',$('.hf-img img').attr('src'));
+}
 	$('.modal-overley').addClass('modal-overley-show');
 	$('body').addClass('stop-scroll');
 	$('body').css('padding-right',getScrollBarWidth ()+'px');
