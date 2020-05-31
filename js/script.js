@@ -271,6 +271,24 @@ if(curentStage==4){
 
 
 
+// read-more
+
+$(".prod-descr-all").each(function(){
+	var review_full = $(this).html();
+	var review = review_full;
+	if( review.length > 120)
+	{
+			review = review.substring(0, 120);
+			$(this).html( review + '...' + '<div class="prod-read-more s-c">Полное описание<div class="c-c"><img src="../img/icons/chevron-right.svg"></div></div>' );
+	}
+	$(this).append('<div class="full_text" style="display: none;">' + review_full + '</div>');
+});
+$(".prod-read-more").click(function(){
+	$(this).parent().html( $(this).parent().find(".full_text").html() );
+});
+
+
+
 
 //ripple
 $(document).on("mousedown", "[data-ripple]", function(e) {
