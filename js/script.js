@@ -84,6 +84,15 @@ $(".tab-t-selector").css({
 });
 }
 
+
+//price-tabs
+$('.img-tab-c-th-img').on("click",function(e){
+	$(this).closest('.img-tab-c-th').next().find('img').attr('src',$(this).attr('data-full'))
+	$('.img-tab-c-th-img').removeClass('active-img-tab-c-th-img');
+	$(this).addClass('active-img-tab-c-th-img');
+});
+
+//menu
 if($(window).width() > 992) {
 $(window).scroll(function(){
 	if($(this).scrollTop()>400){
